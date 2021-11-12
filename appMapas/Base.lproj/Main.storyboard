@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qzu-qr-tmr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appMapas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Xs7-Pb-Bc7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xs7-Pb-Bc7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HoC-9C-h5R"/>
+                            <constraint firstItem="Xs7-Pb-Bc7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i6B-QM-Noz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xs7-Pb-Bc7" secondAttribute="bottom" id="kKT-lS-g49"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xs7-Pb-Bc7" secondAttribute="trailing" id="nOi-ye-5KZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="czT-Ha-Lqu">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="uvY-yf-Ija">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ozh-jL-aCH">
+                                <rect key="frame" x="20" y="5.5" width="197" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="" image="map" catalog="system"/>
+                                    <segment title="" image="globe" catalog="system"/>
+                                    <segment title="" image="map.fill" catalog="system"/>
+                                </segments>
+                                <connections>
+                                    <action selector="btnCambiarMapa:" destination="BYZ-38-t0r" eventType="valueChanged" id="a7s-s2-uOE"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="location.circle" catalog="system" id="2gc-uc-bde">
+                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                            <connections>
+                                <action selector="btnLocation:" destination="BYZ-38-t0r" id="jrd-MA-hag"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapa" destination="Xs7-Pb-Bc7" id="fTJ-0r-RPJ"/>
+                        <outlet property="selector" destination="ozh-jL-aCH" id="CAo-rF-f8Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2352.1739130434785" y="103.79464285714285"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ghJ-Tb-9RJ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Qzu-qr-tmr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="K6g-0S-FLO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bkH-OM-RCf" kind="relationship" relationship="viewControllers" id="edz-UK-YyN"/>
+                        <segue destination="yOZ-49-8wQ" kind="relationship" relationship="viewControllers" id="Npk-5P-awk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3i-R2-HGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531.8840579710145" y="103.79464285714285"/>
+        </scene>
+        <!--Buscar Direcciòn-->
+        <scene sceneID="JyJ-Lf-Id3">
+            <objects>
+                <viewController id="DMK-hH-qrn" customClass="BusquedaViewController" customModule="appMapas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F0g-G3-tzQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f8F-ZS-HN0">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xfX-gF-kAt">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xac-H5-Qo8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f8F-ZS-HN0" firstAttribute="leading" secondItem="xac-H5-Qo8" secondAttribute="leading" id="1Yr-lK-goB"/>
+                            <constraint firstItem="f8F-ZS-HN0" firstAttribute="top" secondItem="xfX-gF-kAt" secondAttribute="bottom" id="4xm-3A-Q5N"/>
+                            <constraint firstItem="xfX-gF-kAt" firstAttribute="leading" secondItem="xac-H5-Qo8" secondAttribute="leading" id="ZgB-8a-LbE"/>
+                            <constraint firstItem="xfX-gF-kAt" firstAttribute="top" secondItem="xac-H5-Qo8" secondAttribute="top" id="bhn-a0-psc"/>
+                            <constraint firstItem="f8F-ZS-HN0" firstAttribute="trailing" secondItem="xac-H5-Qo8" secondAttribute="trailing" id="f9w-Pu-kyC"/>
+                            <constraint firstItem="xfX-gF-kAt" firstAttribute="trailing" secondItem="xac-H5-Qo8" secondAttribute="trailing" id="gjI-q9-UpT"/>
+                            <constraint firstItem="f8F-ZS-HN0" firstAttribute="top" secondItem="xfX-gF-kAt" secondAttribute="bottom" id="hb9-V7-7Gi"/>
+                            <constraint firstItem="f8F-ZS-HN0" firstAttribute="bottom" secondItem="xac-H5-Qo8" secondAttribute="bottom" id="maC-sd-lbV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Buscar Direcciòn" id="2c1-Di-kMb">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="dQz-t2-Vh3">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="eQI-zW-cFQ">
+                                <rect key="frame" x="20" y="5.5" width="197" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="" image="map" catalog="system"/>
+                                    <segment title="" image="globe" catalog="system"/>
+                                    <segment title="" image="map.fill" catalog="system"/>
+                                </segments>
+                                <connections>
+                                    <action selector="btnModificarMapa:" destination="DMK-hH-qrn" eventType="valueChanged" id="2rc-hv-Dhe"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="barraBusqueda" destination="xfX-gF-kAt" id="U8h-5K-79p"/>
+                        <outlet property="mapa" destination="f8F-ZS-HN0" id="A7y-OE-jsw"/>
+                        <outlet property="selector" destination="eQI-zW-cFQ" id="2ef-gv-NSc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMf-XW-opQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442.0289855072465" y="791.51785714285711"/>
+        </scene>
+        <!--Ubicaciòn-->
+        <scene sceneID="Uqh-jR-cnk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bkH-OM-RCf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ubicaciòn" image="mappin.and.ellipse" catalog="system" id="kDi-5L-xvt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sao-QT-zJO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YcH-uu-AxK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxu-qe-AaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1442.0289855072465" y="103.79464285714285"/>
+        </scene>
+        <!--Buscar-->
+        <scene sceneID="kAp-td-bja">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yOZ-49-8wQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Buscar" image="magnifyingglass" catalog="system" id="rbt-8E-0hF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PP6-UN-v6h">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DMK-hH-qrn" kind="relationship" relationship="rootViewController" id="ZS6-Vj-Tsf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlZ-ag-7EZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531.8840579710145" y="791.51785714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="location.circle" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
